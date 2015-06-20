@@ -1,6 +1,6 @@
 # analytics.js-integration-atatus [![Build Status][ci-badge]][ci-link]
 
-Atatus integration for [Analytics.js][].
+[Atatus](https://www.atatus.com) integration for [Analytics.js][].
 
 ## License
 

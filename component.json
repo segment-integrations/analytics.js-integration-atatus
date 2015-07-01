@@ -2,7 +2,7 @@
   "name": "analytics.js-integration-atatus",
   "repo": "segment-integrations/analytics.js-integration-atatus",
   "description": "The Atatus analytics.js integration.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "main": "lib/index.js",
   "dependencies": {
@@ -10,7 +10,7 @@
     "ianstormtaylor/is": "0.1.0"
   },
   "development": {
-    "segmentio/analytics.js": "*",
+    "segmentio/analytics.js-core": "^2.10.0",
     "segmentio/clear-env": "0.2.x",
     "segmentio/analytics.js-integration-tester": "1.4.x"
   }

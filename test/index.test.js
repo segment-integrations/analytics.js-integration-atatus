@@ -31,7 +31,10 @@ describe('Atatus', function() {
   it('should have the right settings', function() {
     analytics.compare(Atatus, integration('Atatus')
       .global('atatus')
-      .option('apiKey', ''));
+      .option('apiKey', '')
+      .option('enableSourcemap', true)
+      .option('enableAjaxErrors', true)
+      .option('enableAjaxAbort', true));
   });
 
   describe('before loading', function() {

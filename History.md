@@ -1,4 +1,9 @@
 
+1.0.6 / 2015-07-09
+==================
+
+  * Add advanced options for loading source maps and reporting AJAX errors
+
 1.0.5 / 2015-06-30
 ==================
 

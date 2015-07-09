@@ -32,9 +32,9 @@ describe('Atatus', function() {
     analytics.compare(Atatus, integration('Atatus')
       .global('atatus')
       .option('apiKey', '')
-      .option('enableSourcemap', true)
-      .option('enableAjaxErrors', true)
-      .option('enableAjaxAbort', true));
+      .option('enableSourcemap', false)
+      .option('reportAjaxAborts', false)
+      .option('reportAjaxErrors', false));
   });
 
   describe('before loading', function() {

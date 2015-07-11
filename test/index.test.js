@@ -33,8 +33,8 @@ describe('Atatus', function() {
       .global('atatus')
       .option('apiKey', '')
       .option('enableSourcemap', false)
-      .option('reportAjaxAborts', false)
-      .option('reportAjaxErrors', false));
+      .option('enableAjaxAbort', false)
+      .option('enableAjaxErrors', false));
   });
 
   describe('before loading', function() {

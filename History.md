@@ -1,4 +1,10 @@
 
+1.0.10 / 2015-09-25
+==================
+
+  * Add advanced options for disabling AJAX monitoring
+  * Remove old AJAX options
+
 1.0.9 / 2015-07-13
 ==================
 

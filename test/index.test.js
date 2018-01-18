@@ -33,8 +33,9 @@ describe('Atatus', function() {
     analytics.compare(Atatus, integration('Atatus')
       .global('atatus')
       .option('apiKey', '')
-      .option('enableSourcemap', false)
-      .option('disableAjaxMonitoring', false));
+      .option('disableAjaxMonitoring', false)
+      .option('allowedDomains', '')
+      .option('enableOffline', false));
   });
 
   describe('before loading', function() {
@@ -78,17 +79,20 @@ describe('Atatus', function() {
 
       it('should send an id', function() {
         analytics.identify('id');
-        analytics.called(window.atatus.setCustomData, { person: { id: 'id' } });
+        analytics.called(window.atatus.setUser, 'id');
+        analytics.called(window.atatus.setCustomData, { id: 'id' });
       });
 
-      it('should send traits', function() {
+      it('should send only traits', function() {
         analytics.identify({ trait: true });
-        analytics.called(window.atatus.setCustomData, { person: { trait: true } });
+        analytics.didNotCall(window.atatus.setUser);
+        analytics.called(window.atatus.setCustomData, { trait: true });
       });
 
       it('should send an id and traits', function() {
-        analytics.identify('id', { trait: true });
-        analytics.called(window.atatus.setCustomData, { person: { id: 'id', trait: true } });
+        analytics.identify('id', { name: 'John Doe', email: 'john@acme.com' });
+        analytics.called(window.atatus.setUser, 'id', 'john@acme.com', 'John Doe');
+        analytics.called(window.atatus.setCustomData, { id: 'id', name: 'John Doe', email: 'john@acme.com' });
       });
     });
   });

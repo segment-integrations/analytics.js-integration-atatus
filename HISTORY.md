@@ -1,3 +1,10 @@
+2.1.0 / 2018-03-14
+==================
+
+  * Remove sourceMap option
+  * Add allowedDomains option
+  * Add enableOffline option
+
 2.0.0 / 2016-06-21
 ==================
 

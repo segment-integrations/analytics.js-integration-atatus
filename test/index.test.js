@@ -34,6 +34,7 @@ describe('Atatus', function() {
       .global('atatus')
       .option('apiKey', '')
       .option('disableAjaxMonitoring', false)
+      .option('disableSPA', false)
       .option('allowedDomains', [])
       .option('enableOffline', false));
   });
@@ -53,6 +54,25 @@ describe('Atatus', function() {
   });
 
   describe('loading', function() {
+    beforeEach(function() {
+      analytics.spy(atatus, 'load');
+    });
+
+    it('should load spa version by default', function(done) {
+      analytics.load(atatus, function() {
+        analytics.assert(window.atatus.spa);
+        done();
+      });
+    });
+
+    it('should load non-spa version if you have set `disableSPA` to true', function(done) {
+      atatus.options.disableSPA = true;
+      analytics.load(atatus, function() {
+        analytics.assert(!window.atatus.spa);
+        done();
+      });
+    });
+
     it('should load and set an onerror handler', function(done) {
       analytics.load(atatus, function(err) {
         if (err) return done(err);
